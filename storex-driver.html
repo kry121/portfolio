@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreX Driver App — UI/UX Case Study</title>
+    <!-- Font Awesome Icons for Figma Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b1329;
+            --text-main: #ffffff;
+            --accent-blue: #1d61e7;
+            --accent-hover: #154ec2;
+            --grid-line: rgba(255, 255, 255, 0.04);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            /* Grid background overlay */
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 40px 40px;
+            min-height: 100vh;
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Back Button Link */
+        .back-link {
+            display: inline-block;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Main Heading */
+        .case-study-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        /* Figma Design Button */
+        .figma-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background-color: var(--accent-blue);
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(29, 97, 231, 0.25);
+            margin-bottom: 3.5rem;
+        }
+
+        .figma-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .figma-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Container for Big Vertical Scroll Image */
+        .case-study-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .case-study-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 2rem 1rem; }
+            .case-study-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 1. Back Link -->
+        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+
+        <!-- 2. Case Study Title -->
+        <h1 class="case-study-title">DELIVER SMARTER WITH THE STOREX DRIVER APP &mdash; UI/UX CASE STUDY</h1>
+
+        <!-- 3. Figma Link Button -->
+        <a href="https://www.figma.com/design/HKON5lCF3ayN7k3cwpGxbC/Driver-App?node-id=1-11&t=HyJ7kmVMrxAjxoLc-1" target="_blank" rel="noopener noreferrer" class="figma-btn">
+            <i class="fa-brands fa-figma"></i> Open Figma Design
+        </a>
+
+        <!-- 4. Big Scroll Image Container -->
+        <div class="case-study-image-container">
+            <!-- Place your Driver App long image here -->
+            <img src="Frame 1000005984.png" alt="Driver App UI/UX Case Study" class="case-study-image">
+        </div>
+    </div>
+
+</body>
+</html>
