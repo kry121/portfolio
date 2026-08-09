@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
+            /* Default Dark Theme Variables */
             --bg-color: #0b1329;
             --card-bg: rgba(255, 255, 255, 0.03);
             --border-color: rgba(255, 255, 255, 0.08);
@@ -15,6 +16,18 @@
             --accent-blue: #1d61e7;
             --accent-hover: #154ec2;
             --grid-line: rgba(255, 255, 255, 0.04);
+            --preview-bg: #182548;
+        }
+
+        /* Light Theme Overrides */
+        body.light-theme {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --grid-line: rgba(0, 0, 0, 0.04);
+            --preview-bg: #e2e8f0;
         }
 
         * {
@@ -22,6 +35,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
@@ -55,6 +69,10 @@
             border-radius: 6px;
             border: 1px solid var(--border-color);
             background: rgba(255, 255, 255, 0.02);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero {
@@ -148,7 +166,7 @@
         .project-preview {
             width: 100%;
             height: 200px;
-            background-color: #182548;
+            background-color: var(--preview-bg);
             border-radius: 8px;
             margin-bottom: 1.5rem;
             display: flex;
@@ -226,7 +244,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            color: #fff;
+            color: var(--text-main);
             outline: none;
         }
 
@@ -266,32 +284,32 @@
             .form-row { grid-template-columns: 1fr; }
             footer { flex-direction: column; gap: 1rem; text-align: center; }
         }
-        .lang-switch {
-    display: inline-block;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.02);
-    color: var(--text-main);
-    text-decoration: none; /* Prevents underline on link */
-    transition: 0.3s;
-}
 
-.lang-switch:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
+        .lang-switch {
+            display: inline-block;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-main);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .lang-switch:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body>
 
     <!-- Header Navigation -->
-<header>
-    <!-- TH logo modified to open CV in a new tab -->
-    <a href="thy HONGKRY.pdf" target="_blank" class="lang-switch" title="View CV">CV</a>
-    <div class="theme-toggle" id="themeToggle"><i class="fa-regular fa-moon"></i></div>
-</header>
+    <header>
+        <a href="thy HONGKRY.pdf" target="_blank" class="lang-switch" title="View CV">CV</a>
+        <div class="theme-toggle" id="themeToggle"><i class="fa-regular fa-moon"></i></div>
+    </header>
 
     <div class="hero">
         <div class="subtitle">Junior UI/UX Designer</div>
@@ -399,8 +417,22 @@
         <div>thyhongkry21@gmail.com</div>
     </footer>
 
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-moon', 'fa-regular');
+                themeIcon.classList.add('fa-sun', 'fa-solid');
+            } else {
+                themeIcon.classList.remove('fa-sun', 'fa-solid');
+                themeIcon.classList.add('fa-moon', 'fa-regular');
+            }
+        });
+    </script>
 </body>
-<script src="js.js">
-    
-</script>
 </html>
