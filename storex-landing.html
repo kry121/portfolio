@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoreX Landing Page — UI/UX Case Study</title>
-    <!-- Font Awesome Icons for Figma Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0b1329;
-            --text-main: #ffffff;
+            /* Default Light Theme Variables */
+            --bg-color: #f8fafc;
+            --text-main: #0f172a;
             --accent-blue: #1d61e7;
             --accent-hover: #154ec2;
+            --grid-line: rgba(0, 0, 0, 0.04);
+            --border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-theme {
+            /* Dark Theme Overrides */
+            --bg-color: #0b1329;
+            --text-main: #ffffff;
             --grid-line: rgba(255, 255, 255, 0.04);
             --border-color: rgba(255, 255, 255, 0.08);
         }
@@ -21,6 +29,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
@@ -40,6 +49,14 @@
             margin: 0 auto;
         }
 
+        /* Top Navigation Header */
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
         /* Back Button Link */
         .back-link {
             display: inline-block;
@@ -47,13 +64,31 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 2.5rem;
             transition: opacity 0.2s ease;
         }
 
         .back-link:hover {
             opacity: 0.8;
             text-decoration: underline;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            cursor: pointer;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(150, 150, 150, 0.1);
         }
 
         /* Main Heading */
@@ -107,7 +142,7 @@
             display: block;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         /* Responsive Tweaks */
@@ -125,23 +160,37 @@
 <body>
 
     <div class="container">
-        <!-- 1. Back Link -->
-        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+        <div class="header-nav">
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+            <div class="theme-toggle" id="themeToggle"><i class="fa-solid fa-sun"></i></div>
+        </div>
 
-        <!-- 2. Case Study Title -->
         <h1 class="case-study-title">STOREX LANDING PAGE &mdash; UI/UX CASE STUDY</h1>
 
-        <!-- 3. Figma Button -->
         <a href="https://www.figma.com/design/HKON5lCF3ayN7k3cwpGxbC/Driver-App?node-id=1-12&t=HyJ7kmVMrxAjxoLc-1" target="_blank" rel="noopener noreferrer" class="figma-btn">
             <i class="fa-brands fa-figma"></i> Open Figma Design
         </a>
 
-        <!-- 4. Big Scroll Image Container -->
         <div class="case-study-image-container">
-            <!-- Replace 'Storex Landing Page.jpg' with the actual path to your large case study image -->
             <img src="Storex Landing Page.png" alt="StoreX Landing Page UI/UX Case Study" class="case-study-image">
         </div>
     </div>
 
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-sun', 'fa-solid');
+                themeIcon.classList.add('fa-moon', 'fa-regular');
+            } else {
+                themeIcon.classList.remove('fa-moon', 'fa-regular');
+                themeIcon.classList.add('fa-sun', 'fa-solid');
+            }
+        });
+    </script>
 </body>
 </html>
