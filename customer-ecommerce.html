@@ -81,7 +81,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Project Intro Section (Matches your screenshot) */
+        /* Project Intro Section */
         .project-intro {
             max-width: 1200px;
             margin: 0 auto;
@@ -127,6 +127,19 @@
             background: var(--accent-hover);
         }
 
+        /* NEW: Styling for the reviewer note */
+        .project-note {
+            margin-top: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .project-note strong {
+            color: var(--accent-blue);
+        }
+
         /* Single Image Container */
         .single-image-container {
             max-width: 1200px;
@@ -137,7 +150,7 @@
         .single-image-container img {
             width: 100%;
             height: auto;
-            border-radius: 16px; /* Slightly softer corners like your screenshot */
+            border-radius: 16px;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
@@ -172,10 +185,16 @@
         <a href="https://www.figma.com/design/3Taehxh509rES8JBqdgB5S/Customer-App?node-id=1-5&t=nDMFnnEkiZtxEzr5-1" target="_blank" class="figma-btn">
             <i class="fa-brands fa-figma"></i> Open Figma Design
         </a>
+
+        <!-- NEW: The note you requested for the interviewer -->
+        <p class="project-note">
+            <strong>Note to Reviewers:</strong> This project represents one year of hands-on UI/UX experience designing and continuously improving a complete e-commerce marketplace. I worked across user flows, wireframes, high-fidelity UI, components, and interactions, while introducing a **binding concept** to connect users, products, and transactions into a seamless shopping experience.
+
+        </p>
     </div>
 
     <main class="single-image-container">
-        <img src="your-big-project-image.png" alt="Customer E-Commerce Full Case Study">
+        <img src="Thumbnail.png" alt="Customer E-Commerce Full Case Study">
     </main>
 
     <footer>
