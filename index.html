@@ -295,7 +295,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr !important; }
             .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
             .form-row { grid-template-columns: 1fr; }
             footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -333,10 +333,11 @@
         <a href="#contact" class="btn-primary">Discuss Now</a>
     </div>
 
+    <!-- UI/UX Projects Section -->
     <section id="projects">
         <div class="section-header">
             <span>Recent Works</span>
-            <h2>See my latest projects!</h2>
+            <h2>UI/UX Projects</h2>
         </div>
         <div class="projects-grid">
             <div class="project-card">
@@ -369,6 +370,23 @@
                         <img src="Customerapp.png" alt="Customer E-Commerce App Preview">
                     </div>
                     <span class="btn-card">Customer E-Commerce App</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Separate layout for Freelance Poster placed below UI/UX projects -->
+        <div class="section-header" style="margin-top: 6rem;">
+            <span>Graphic Design</span>
+            <h2>Freelance Poster Design</h2>
+        </div>
+        <!-- Single column grid centered for the poster to make it stand out -->
+        <div class="projects-grid" style="grid-template-columns: 1fr; max-width: 550px; margin: 0 auto;">
+            <div class="project-card">
+                <a href="freelance-poster.html">
+                    <div class="project-preview">
+                        <img src="poster.png" alt="Freelance UI/UX Poster Preview">
+                    </div>
+                    <span class="btn-card">Freelance UI/UX Poster</span>
                 </a>
             </div>
         </div>
@@ -484,4 +502,4 @@
         });
     </script>
 </body>
-</html>
+</html>     
